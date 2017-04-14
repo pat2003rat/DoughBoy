@@ -18,7 +18,7 @@ var AppRouter = Backbone.Router.extend({
     'recipes/': 'recipeList',
   },
   initialize: function(){
-    setupParse('setup', 'slumber')
+    setupParse('setup', 'slumber');
   },
   index: function(){
     ReactDOM.render(
