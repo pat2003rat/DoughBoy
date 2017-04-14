@@ -550,19 +550,17 @@ var User = Backbone.Model.extend({
     return data.results;
   },
   signIn: function(username, password){
-    console.log(this.urlRoot);
     var loginUrl = 'https://tiny-parse-server.herokuapp.com/' + 'login?username=' + encodeURI(username) + '&password=' + encodeURI(password);
 
     $.ajax(loginUrl).then(function(response){
       localStorage.setItem('token', response.sessionToken);
-      Backbone.history.navigate('recipes/', {trigger:true});
-      console.log(response)
-    })
+      Backbone.history.navigate('recipes/', { trigger: true });
+    });
   },
   signUp: function(){
     var self = this;
     var username = this.get('username');
-    var password = this.get('password')
+    var password = this.get('password');
 
     this.save().then(function(data){
       localStorage.setItem('user', JSON.stringify(self.toJSON()));
@@ -604,7 +602,7 @@ var Recipe = ParseModel.extend({
   save: function(key, val, options){
     this.set('ingredients', this.get('ingredients').toJSON());
 
-    return ParseModel.prototype.save.apply(this,arguments);
+    return ParseModel.prototype.save.apply(this, arguments);
   },
   parse: function(data){
     data.ingredients = new IngredientCollection(data.ingredients);
@@ -637,11 +635,11 @@ var $ = require('jquery');
 function setupParse(appId, apiKey, sessionId){
   $.ajaxSetup({
     beforeSend: function(xhr){
-      xhr.setRequestHeader("X-Parse-Application-Id", 'tiygvl');
-      xhr.setRequestHeader("X-Parse-Rest-API-Key", 'slumber');
+      xhr.setRequestHeader('X-Parse-Application-Id', 'tiygvl');
+      xhr.setRequestHeader('X-Parse-Rest-API-Key', 'slumber');
 
-      if(sessionId){
-        xhr.setRequestHeader("X-Parse-Session-Token", sessionId);
+      if (sessionId){
+        xhr.setRequestHeader('X-Parse-Session-Token', sessionId);
       }
     }
   });
@@ -673,7 +671,7 @@ var AppRouter = Backbone.Router.extend({
     'recipes/': 'recipeList',
   },
   initialize: function(){
-    setupParse('setup', 'slumber')
+    setupParse('setup', 'slumber');
   },
   index: function(){
     ReactDOM.render(
