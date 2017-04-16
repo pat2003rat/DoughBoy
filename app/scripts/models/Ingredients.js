@@ -8,12 +8,12 @@ var User = Backbone.Model.extend({
   },
 
   idAttribute: 'objectId',
-  urlRoot: 'https://tiny-parse-server.herokuapp.com/',
+  urlRoot: 'https://tiny-parse-server.herokuapp.com/users',
   parse: function(data){
     return data.results;
   },
   signIn: function(username, password){
-    var loginUrl = 'https://tiny-parse-server.herokuapp.com/' + 'login?username=' + encodeURI(username) + '&password=' + encodeURI(password);
+    var loginUrl = 'https://tiny-parse-server.herokuapp.com/users' + 'login?username=' + encodeURI(username) + '&password=' + encodeURI(password);
 
     $.ajax(loginUrl).then(function(response){
       localStorage.setItem('token', response.sessionToken);
@@ -27,6 +27,7 @@ var User = Backbone.Model.extend({
 
     this.save().then(function(data){
       localStorage.setItem('user', JSON.stringify(self.toJSON()));
+      Backbone.history.navigate('recipes/', {trigger: true});
     });
   },
 });
