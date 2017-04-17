@@ -24,9 +24,9 @@ var AdjustForm = React.createClass({displayName: "AdjustForm",
   },
   render: function(){
     return (
-      React.createElement("form", {onSubmit: this.handleSubmit, className: "form-inline well"}, 
-        React.createElement("div", {className: "form-group"}, 
-          React.createElement("h3", {className: "currentquantitycolor"}, "Current Quantity: ", React.createElement("input", {onChange: this.handlequantity, type: "text", placeholder: this.state.quantity}))
+      React.createElement("form", {onSubmit: this.handleSubmit, className: "form-inline well text-center"}, 
+        React.createElement("div", {className: "form-group text-center"}, 
+          React.createElement("h3", {className: "currentquantitycolor text-center"}, "Current Quantity: ", React.createElement("input", {onChange: this.handlequantity, type: "text", placeholder: this.state.quantity}))
         )
       )
     )
@@ -72,7 +72,7 @@ var AdjustRecipeContainer = React.createClass({displayName: "AdjustRecipeContain
     return(
       React.createElement("div", {className: "container"}, 
         React.createElement(AdjustForm, {recipe: this.props.recipe, adjustQuantity: this.adjustQuantity}), 
-        React.createElement("p", {className: "titleofingredients"}, "Ingredients:"), 
+        React.createElement("p", {className: "titleofingredients text-center"}, "Ingredients: Check Off"), 
         React.createElement(IngredientList, {ingredients: ingredients, factor: this.state.factor})
       )
     )
@@ -227,7 +227,8 @@ var RecipeHeading = React.createClass({displayName: "RecipeHeading",
       React.createElement("div", null, 
         React.createElement("h1", {className: "col-xs-12 col-md-12 recipetitle text-center"}, this.props.recipe.get('name')), 
         React.createElement("br", null), 
-        React.createElement("button", {onClick: this.editIngredient, type: "button", className: "btn btn-info text-center"}, " Edit Recipe")
+        React.createElement("div", {className: "col-md-5 text-center"}), 
+        React.createElement("button", {onClick: this.editIngredient, type: "button", className: "btn btn-info"}, " Edit Recipe ")
       )
     )
   }
@@ -351,20 +352,20 @@ var Form = React.createClass({displayName: "Form",
     });
     return (
       React.createElement("form", {onSubmit: this.handleSubmit}, 
-        React.createElement("h1", null, heading, " Recipe"), 
-        React.createElement("div", {className: "form-group"}, 
-          React.createElement("label", {htmlFor: "name"}, "Recipe Name"), 
+        React.createElement("h1", {className: "text-center"}, heading, " Recipe"), 
+        React.createElement("div", {className: "form-group text-center"}, 
+          React.createElement("label", {htmlFor: "recipeName"}, "Recipe Name"), 
           React.createElement("input", {onChange: this.handleInputChange, value: this.state.name, type: "text", className: "form-control", name: "name", id: "name", placeholder: "Name"})
         ), 
-        React.createElement("div", {className: "form-group"}, 
+        React.createElement("div", {className: "form-group text-center"}, 
           React.createElement("label", {htmlFor: "servings"}, "Servings"), 
           React.createElement("input", {onChange: this.handleInputChange, value: this.state.servings, type: "text", className: "form-control", name: "servings", id: "servings", placeholder: "Servings"})
         ), 
-        React.createElement("div", {className: "col-md-10"}, 
-          React.createElement("h2", null, "Ingredients: ", React.createElement("button", {type: "button", onClick: this.props.addIngredient, className: "pull-right btn btn-success"}, "Add Ingredient"), 
-                           React.createElement("button", {type: "submit", className: "btn btn-primary spacingbuttons"}, "Save Recipe"), 
-                           React.createElement("button", {onClick: this.navBack, type: "button", className: "btn btn-warning"}, "Back to Recipe Listing")
-          )
+        React.createElement("div", {className: "col-xs-12 col-md-12 text-center"}, 
+          React.createElement("h2", null, "Ingredients: "), 
+            React.createElement("button", {type: "button", onClick: this.props.addIngredient, className: "btn btn-success"}, "Add Ingredient"), 
+            React.createElement("button", {type: "submit", className: "btn btn-primary spacingbuttons"}, "Save"), 
+            React.createElement("button", {onClick: this.navBack, type: "button", className: "btn btn-warning"}, "Recipe Listing")
         ), 
         React.createElement("div", {className: "form-inline"}, 
           ingredientFormset
@@ -425,7 +426,7 @@ var RecipeAddEditContainer = React.createClass({displayName: "RecipeAddEditConta
     return(
       React.createElement("div", {className: "container"}, 
         React.createElement("div", {className: "row"}, 
-          React.createElement("div", {className: "col-xs-12 col-md-12"}, 
+          React.createElement("div", {className: "col-xs-12 col-md-12 text-center"}, 
             React.createElement(Form, {recipe: this.state.recipe, addIngredient: this.addIngredient, saveRecipe: this.saveRecipe, removeIngredient: this.removeIngredient})
           )
         )
@@ -656,7 +657,7 @@ var Backbone = require('backbone');
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var setupParse = require('./parseUtilities').setupParse;
+var setupParse = require('./parse').setupParse;
 var AdjustRecipeContainer = require('./components/AdjustRecipe.jsx').AdjustRecipeContainer;
 var RecipeListContainer = require('./components/recipeListing.jsx').RecipeListContainer;
 var RecipeDetailContainer = require('./components/recipeDetail.jsx').RecipeDetailContainer;
@@ -707,7 +708,7 @@ module.exports = {
   router: router
 };
 
-},{"./components/AdjustRecipe.jsx":1,"./components/Login.jsx":2,"./components/recipeDetail.jsx":3,"./components/recipeForm.jsx":4,"./components/recipeListing.jsx":5,"./parseUtilities":8,"backbone":10,"react":169,"react-dom":40}],10:[function(require,module,exports){
+},{"./components/AdjustRecipe.jsx":1,"./components/Login.jsx":2,"./components/recipeDetail.jsx":3,"./components/recipeForm.jsx":4,"./components/recipeListing.jsx":5,"./parse":8,"backbone":10,"react":169,"react-dom":40}],10:[function(require,module,exports){
 (function (global){
 //     Backbone.js 1.3.3
 
