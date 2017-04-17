@@ -18,6 +18,9 @@ var ListItem = React.createClass({
   }
 });
 
+//http://api.jquery.com/map/
+//https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
 var List = React.createClass({
   render: function(){
     var self = this;

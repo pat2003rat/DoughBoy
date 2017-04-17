@@ -2,6 +2,7 @@ var React = require('react');
 var $ = require('jquery');
 var models = require('../models/Ingredients');
 
+//https://developmentarc.gitbooks.io/react-indepth/content/life_cycle/update/component_will_receive_props.html
 
 var AdjustForm = React.createClass({
   getInitialState: function(){
