@@ -166,7 +166,7 @@ var SignIn = React.createClass({displayName: "SignIn",
               React.createElement("label", {htmlFor: "password-login"}, "Password"), 
               React.createElement("input", {onChange: this.handlePasswordInput, value: this.state.password, className: "form-control", name: "password", id: "password-login", type: "password", placeholder: "Password"})
             ), 
-            React.createElement("input", {className: "btn btn-primary", type: "submit", value: "Let's Go!"})
+            React.createElement("input", {className: "btn btn-primary", type: "submit", value: "Log Me In!"})
           )
         )
     )
