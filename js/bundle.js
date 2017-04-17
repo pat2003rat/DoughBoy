@@ -4,6 +4,7 @@ var React = require('react');
 var $ = require('jquery');
 var models = require('../models/Ingredients');
 
+//https://developmentarc.gitbooks.io/react-indepth/content/life_cycle/update/component_will_receive_props.html
 
 var AdjustForm = React.createClass({displayName: "AdjustForm",
   getInitialState: function(){
@@ -460,6 +461,9 @@ var ListItem = React.createClass({displayName: "ListItem",
     )
   }
 });
+
+//http://api.jquery.com/map/
+//https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 
 var List = React.createClass({displayName: "List",
   render: function(){
