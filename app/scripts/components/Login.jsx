@@ -78,7 +78,7 @@ var SignIn = React.createClass({
               <label htmlFor="password-login">Password</label>
               <input onChange={this.handlePasswordInput} value={this.state.password} className="form-control" name="password" id="password-login" type="password" placeholder="Password" />
             </div>
-            <input className="btn btn-primary" type="submit" value="Let's Go!" />
+            <input className="btn btn-primary" type="submit" value="Log Me In!" />
           </form>
         </div>
     )
