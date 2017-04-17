@@ -5800,7 +5800,7 @@ body {
   padding-left: 100px; }
 
 .currentquantitycolor {
-  color: white;
+  color: green;
   font-weight: bolder; }
 
 .list-group-item {
@@ -5810,4 +5810,5 @@ body {
 
 .well {
   background-color: #03244D; }
+
 /*# sourceMappingURL=app.css.map */
