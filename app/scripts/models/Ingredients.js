@@ -53,7 +53,7 @@ var Ingredient = ParseModel.extend({
 
 var IngredientCollection = Backbone.Collection.extend({
   model: Ingredient,
-  url: 'https://tiny-parse-server.herokuapp.com/classes/PatricksRecipe',
+  url: 'https://tiny-parse-server.herokuapp.com/classes/PatricksIngredients',
 });
 
 

@@ -22,9 +22,9 @@ var AdjustForm = React.createClass({
   },
   render: function(){
     return (
-      <form onSubmit={this.handleSubmit} className="form-inline well">
-        <div className="form-group">
-          <h3 className="currentquantitycolor">Current Quantity: <input onChange={this.handlequantity} type="text" placeholder= {this.state.quantity} /></h3>
+      <form onSubmit={this.handleSubmit} className="form-inline well text-center">
+        <div className="form-group text-center">
+          <h3 className="currentquantitycolor text-center">Current Quantity: <input onChange={this.handlequantity} type="text" placeholder= {this.state.quantity} /></h3>
         </div>
       </form>
     )
@@ -70,7 +70,7 @@ var AdjustRecipeContainer = React.createClass({
     return(
       <div className="container">
         <AdjustForm recipe={this.props.recipe} adjustQuantity={this.adjustQuantity}/>
-        <p className="titleofingredients">Ingredients:</p>
+        <p className="titleofingredients text-center">Ingredients: Check Off</p>
         <IngredientList ingredients={ingredients} factor={this.state.factor}/>
       </div>
     )

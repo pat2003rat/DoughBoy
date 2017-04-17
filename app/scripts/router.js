@@ -2,7 +2,7 @@ var Backbone = require('backbone');
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var setupParse = require('./parseUtilities').setupParse;
+var setupParse = require('./parse').setupParse;
 var AdjustRecipeContainer = require('./components/AdjustRecipe.jsx').AdjustRecipeContainer;
 var RecipeListContainer = require('./components/recipeListing.jsx').RecipeListContainer;
 var RecipeDetailContainer = require('./components/recipeDetail.jsx').RecipeDetailContainer;

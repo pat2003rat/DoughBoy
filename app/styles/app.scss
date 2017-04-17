@@ -50,22 +50,26 @@ body {
 }
 
 .titleofingredients {
-  color: black;
+  font-size: 30px;
+  color: white;
 }
 
-.form-group {
-  padding-left: 60px;
-}
 
 .columntitles {
   padding-left: 100px;
 }
 
 .currentquantitycolor {
-  color: black;
+  color: white;
   font-weight: bolder;
 }
 
 .list-group-item {
   background-color: wheat;
+  font-size: 20px;
+  color: black;
+}
+
+.well {
+  background-color: #03244D;
 }

@@ -81,20 +81,20 @@ var Form = React.createClass({
     });
     return (
       <form onSubmit={this.handleSubmit}>
-        <h1>{heading} Recipe</h1>
-        <div className="form-group">
-          <label htmlFor = "name">Recipe Name</label>
+        <h1 className ="text-center">{heading} Recipe</h1>
+        <div className="form-group text-center">
+          <label htmlFor = "recipeName">Recipe Name</label>
           <input onChange={this.handleInputChange} value={this.state.name} type="text" className="form-control" name="name" id="name" placeholder="Name" />
         </div>
-        <div className="form-group">
+        <div className="form-group text-center">
           <label htmlFor = "servings">Servings</label>
           <input onChange={this.handleInputChange} value={this.state.servings} type="text" className="form-control" name="servings" id="servings" placeholder="Servings" />
         </div>
-        <div className = "col-md-10" >
-          <h2>Ingredients: <button type="button" onClick={this.props.addIngredient} className="pull-right btn btn-success">Add Ingredient</button>
-                           <button type="submit" className="btn btn-primary spacingbuttons">Save Recipe</button>
-                           <button onClick={this.navBack} type="button" className="btn btn-warning">Back to Recipe Listing</button>
-          </h2>
+        <div className = "col-xs-12 col-md-12 text-center" >
+          <h2>Ingredients: </h2>
+            <button type="button" onClick={this.props.addIngredient} className="btn btn-success">Add Ingredient</button>
+            <button type="submit" className="btn btn-primary spacingbuttons">Save</button>
+            <button onClick={this.navBack} type="button" className="btn btn-warning">Recipe Listing</button>
         </div>
         <div className="form-inline">
           {ingredientFormset}
@@ -155,7 +155,7 @@ var RecipeAddEditContainer = React.createClass({
     return(
       <div className="container">
         <div className="row">
-          <div className="col-xs-12 col-md-12">
+          <div className="col-xs-12 col-md-12 text-center">
             <Form recipe={this.state.recipe} addIngredient={this.addIngredient} saveRecipe={this.saveRecipe} removeIngredient={this.removeIngredient}/>
           </div>
         </div>

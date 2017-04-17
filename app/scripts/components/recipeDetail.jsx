@@ -13,7 +13,8 @@ var RecipeHeading = React.createClass({
       <div>
         <h1 className="col-xs-12 col-md-12 recipetitle text-center">{this.props.recipe.get('name')}</h1>
         <br></br>
-        <button onClick={this.editIngredient} type="button" className="btn btn-info text-center"> Edit Recipe</button>
+        <div className ="col-md-5 text-center"></div>
+        <button onClick={this.editIngredient} type="button" className="btn btn-info"> Edit Recipe </button>
       </div>
     )
   }
