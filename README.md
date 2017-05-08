@@ -1,6 +1,6 @@
 Week 8
 
-DoughBoy is a project from one of the final weeks of the course. It helped strengthen our CRUD understanding. It is an app for authenticated chefs to actively change serving size and ingredient amounts proportionately to their favorite recipes containing ingredients and measurements they were able to input.
+DoughBoy is a project from weeks 8 the course. It helped strengthen our CRUD understanding. It is an app for authenticated chefs to actively change serving size and ingredient amounts proportionately to their favorite recipes containing ingredients and measurements they were able to input.
 
 React
 Backbone
